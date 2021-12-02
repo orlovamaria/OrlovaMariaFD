@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Underdog-Regular';
+  src: url('Underdog-Regular.eot');
+  src: url('Underdog-Regular.eot?#iefix') format('embedded-opentype'),
+       url('Underdog-Regular.svg#Underdog-Regular') format('svg'),
+       url('Underdog-Regular.ttf') format('truetype'),
+       url('Underdog-Regular.woff') format('woff'),
+       url('Underdog-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

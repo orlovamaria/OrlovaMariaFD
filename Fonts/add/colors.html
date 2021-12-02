@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <font color="#BruceWillis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit perspiciatis error magnam exercitationem ratione natus nesciunt eum possimus sapiente? Maxime beatae veniam aspernatur nihil enim iste nulla magni molestias architecto!</font><br>
+    <p>Цвет: средне темный оттенок желто-зеленого. Алгоритм разбора #BruceWillis</p>
+    <ul>
+        <li>Убираем решетку и заменяем все неправильные шестнадцатиричные символы нулями, BruceWillis = B00CE000000</li>
+        <li>Доставляем нули до количества знаков, делимого на 3, получаем - B00CE0000000</li>
+        <li>Разбиваем на три группы, каждая из которых отвечает за одну компоненту RGB: B00C E000 0000</li>
+        <li>Обрезаем каждый из аргументов справа, оставляя 2 символа и получаем в результате: RGB (b0 e0 00) = #b0e000</li>
+    </ul>
+    <font color="#CANDY">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum alias fuga atque minima quae? Quaerat laborum beatae eveniet libero eius tempora autem ducimus eum quam corporis consectetur ex, accusamus itaque.</font>
+    <p>Цвет: средне темный оттенок красного. Алгоритм разбора #CANDY</p>
+    <ul>
+        <li>Убираем решетку и заменяем все неправильные шестнадцатиричные символы нулями, CANDY = CA0D0</li>
+        <li>Доставляем нули до количества знаков, делимого на 3, получаем - 0A0D00 RGB (0a 0d 00) = #ca0d00</li>
+    </ul>
+</body>
+</html>
