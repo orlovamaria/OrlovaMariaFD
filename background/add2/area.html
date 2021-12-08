@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Тег AREA</h1>
+    <p>Каждый элемент &lt;area&gt; определяет активные области изображения, которые являются ссылками. 
+        Рисунок с привязанными к нему активными областями называется в совокупности картой-изображением. 
+        Такая карта по внешнему виду ничем не отличается от обычного изображения, но при этом оно может быть
+         разбито на невидимые зоны разной формы, где каждая из областей служит ссылкой. Тег &lt;area&gt; задает форму области, 
+         ее размеры, устанавливает адрес документа, на который следует сделать ссылку, а также имя окна или фрейма, куда 
+         браузер будет загружать документ. Этот тег всегда располагается в контейнере &lt;map&gt;, который связывает координаты областей с изображением.</p>
+    <h2>Пример</h2>
+    
+    <p>Рассмотрим 3 первые геометрические фигуры на картинке: теугольник, круг и квадрат. C помощью тега &lt;area&gt; мы можем выделить эти фигуры тремя разными областями и сделать эти области гиперссылками на другой документ.</p>
+    <img src="ogf.jpg" alt="figuri" usemap="#figuri" width="50%">
+   <map name="figuri">
+       <area shape="poly" coords="96,25,36,142,156,144" href="https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA" alt="triangle">
+       <area shape="circle" coords="309,97,70" href="https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D1%83%D0%B3" alt="circle">
+       <area shape="rect" coords="483,32,596,596" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B2%D0%B0%D0%B4%D1%80%D0%B0%D1%82" alt="rect">
+   </map>
+</body>
+</html>
