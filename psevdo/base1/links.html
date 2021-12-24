@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        div.container a{
+            color: green;
+            padding-right: 10px;
+            padding-left: 10px;
+            display: inline-block;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+        div.container a:not(:last-child){
+            border-right: 2px solid red;
+        }
+        div.container a:hover{
+            color: red;
+        }
+        p > a{
+            float: left;
+            color: green;
+            padding-right: 2px;
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+        p:not(:last-child):after{
+            float: left;
+            content: '|';
+            color: red;
+            font-weight: bold;
+            font-size: 190%;
+            padding-left: 8px;
+        }
+        p > a:hover{
+            color: red;
+        }
+        .clearfix{
+            content: '';
+            clear: both;
+        }
+        li{
+            list-style-type: none;
+            display: inline-block;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        li:not(:last-child){
+            background-image: url('6e57d5396f21f708fb29bde9b9245b07.png');
+            background-repeat: no-repeat;
+            background-position: right;
+            padding-right: 22px;
+        }
+        ul{
+            padding-left: 8px;
+            padding-top: 10px;
+        }
+        
+        li a{
+            color: green;
+        }
+        li a:hover{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- тег a строчный, разделители сделаны border (в данном примере недостатков не нашла, преимущество в том, что border позволяет установить толщину и цвет и стиль границы) -->
+   <div class="container">
+        <a href="#">первая ссылка</a>
+        <a href="#">вторая ссылка</a>
+        <a href="#">третья ссылка</a>
+        <a href="#">четвёртая ссылка</a>
+        <a href="#">пятая ссылка</a>
+   </div>
+
+   <div>
+       <!-- в данном примере ссылки расположены в строку с помощью свойства float (недостаток в том, что при дальнейшей верстке, нужно убирать обтекание), 
+        разделители сделаны с помощью after content (недостаток в том, что требует дополнительных стилей типа font-size и font-weight). -->
+       <p><a href="#">первая ссылка</a></p>
+        <p><a href="#">вторая ссылка</a></p>
+        <p><a href="#">третья ссылка</a></p>
+        <p><a href="#">четвёртая ссылка</a></p>
+        <p><a href="#">пятая ссылка</a></p>
+    </div>
+
+    <div class="clearfix">
+        <!-- ссылки расположены в строку с помощью свойства display: inline-block, разделители сделаны с помощью background-image (недостаток в том, что требует дополнительные стили и плохо поддаётся дальнейшей стилизации) -->
+        <ul>
+            <li><a href="#">первая ссылка</a></li>
+            <li><a href="#">вторая ссылка</a></li>
+            <li><a href="#">третья ссылка</a></li>
+            <li><a href="#">четвёртая ссылка</a></li>
+            <li><a href="#">пятая ссылка</a></li>
+        </ul>
+    </div>
+</body>
+</html>
