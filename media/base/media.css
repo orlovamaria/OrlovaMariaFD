@@ -1,0 +1,32 @@
+@media all and (max-width: 1600px){
+    .header_footer{
+        background-color: rosybrown;
+    }
+}
+@media all and (max-width: 992px){
+    img{
+        width: 98%;
+        height: 300px;
+    }
+}
+@media all and (max-width: 560px){
+    .menu{
+        float: none;
+        width: auto;
+        background-color: khaki; 
+    }
+    .ball{
+        width: 100%;
+        margin-left: 0px;
+        background-color: khaki;
+        background-image: none;
+    }
+    ul{
+        margin: 0px;
+    }
+}
+@media all and (max-width: 451px){
+    img{
+        height: 200px;
+    }
+}

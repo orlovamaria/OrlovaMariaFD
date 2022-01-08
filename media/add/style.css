@@ -1,0 +1,9 @@
+a[href^="https"]{
+    background-image: url('extref.png');
+    background-repeat: no-repeat;
+    background-position: left;
+}
+a{
+    padding-left: 12px;
+    display: block;
+}

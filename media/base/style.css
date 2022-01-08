@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.header_footer{
+    vertical-align: initial;
+    padding: 1em 0;
+    height: 50px;
+    color: blue;
+    font-size: 24px;
+    background-color: #aed9e7;
+    text-align: center;
+}
+.menu{
+   float: left;
+   background-color: #f0e78d;
+   width: 20%;
+   vertical-align: text-top;
+}
+.ball{
+   background-color: white;
+   margin-left: 32%;
+   background-image: url('ball.jpeg');
+   background-repeat: repeat-y;
+   background-position: right;
+}
+img{
+   float: left;
+   width: 200px;
+   height: 150px;
+   margin: 5px;
+}
+p{
+   text-indent: 2em;
+   padding: 0px;
+   margin: 8px;
+}
+h1{
+   text-align: center;
+   margin-block-start: 0px;
+   margin-block-end: 0px;
+}
+.general_background{
+    background-color: khaki;
+}

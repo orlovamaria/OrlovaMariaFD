@@ -1,0 +1,6 @@
+@media print{
+    
+    a::before{
+        content: 'ссылка Информация на https://chesspro.ru/statistic/botvinnik.shtml';
+    }
+}
