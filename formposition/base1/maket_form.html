@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .label{
+           float: left;
+       }
+       input[type="text"], textarea{
+           width: 100%;
+       }
+       textarea{
+           resize: none;
+       }
+       .name{
+           margin-left: 182px;
+           margin-right: 20px;
+           margin-bottom: 3px;
+       }
+       .textarea{
+           margin-right: 20px;
+           margin-top: 5px;
+       }
+       .heading{
+           margin-left: 122px;
+       }
+       input[type="checkbox"]{
+           margin-bottom: 0px;
+           margin-top: 4px;
+           margin-left: 9px;
+       }
+       input[value="site"]{
+           margin-left: 93px;
+       }
+       .allow{
+            display: block;
+            float: left;
+       }
+       
+       @media all and (max-width: 558px){
+           .label{
+               float: none;
+           }
+           .name{
+               margin-left: 0px;
+               margin-right: 5px;
+               margin-top: 5px;
+           }
+           .heading{
+               display: block;
+               margin-left: 0px;
+               margin-right: 0px;
+               margin-top: 5px;
+               width: 100%;
+           }
+        
+           input[type="radio"]{
+              margin-left: 0px;
+              float: left;
+           }
+           .rubrica{
+               display: block;
+           }
+           .textarea{
+               margin-right: 5px;
+               margin-top: 3px;
+           }
+       }
+
+    </style>
+</head>
+<body>
+    <form action="http://fe.it-academy.by/TestForm.php" method="get">
+        <p>Для публикации вашей статьи заполните, пожалуйста, следующую форму:</p>
+    
+        
+            <label class="label">Название статьи</label> 
+        <div class="name">
+            <input type="text" name="article_title"> 
+        </div> 
+        
+            <label>Рубрика</label> 
+            <select name="heading" class="heading">
+                <option value="programming">программирование</option>
+                <option value="accounting">бухгалтерский учёт</option>
+                <option value="marketing">маркетинг</option>
+            </select>
+           <br>
+            
+        <label class="label">Публикация:</label> 
+        
+        <div>
+            <input type="radio" name="edition" value="site"> 
+            <label class="rubrica">на сайте</label>
+        
+            <input type="radio" name="edition" value="magazine"> 
+            <label class="rubrica">в журнале</label>
+        
+            <input type="radio" name="edition" value="site_magazine"> 
+            <label class="rubrica">на сайте и в журнале</label>
+        </div>
+        
+        <label class="allow">Разрешить комментарии:</label> 
+        <input type="checkbox" name="comments"><br>
+        
+        <label>Текст статьи:</label> 
+        <div class="textarea">
+            <textarea name="article_text"></textarea><br>
+        </div> 
+    
+        <input type="submit" value="Опубликовать">
+    </form>
+</body>
+</html>
