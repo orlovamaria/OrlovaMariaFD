@@ -8,11 +8,273 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="media.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="header">
+        <div class="container">
+            <div class="header-top clearfix">
+                <ul class="header-top-menu">
+                    <li><a href="#">Магазины</a></li>
+                    <li><a href="#">Оплата и доставка</a></li>
+                </ul>  
+                <div class="header-top-user">
+                    <img src="img/user.svg" alt="user">
+                    <span>Регистрация/Вход</span>
+                </div>
+                <div class="header-top-phone clearfix">
+                    <img src="img/phone.svg" alt="phone">
+                    <span>+375(29)729-03-91</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-bottom"></div>
+    <div class="header-logo">
+        <div class="container">
+            <div class="header-logo-1">
+                <img src="img/logo 1.png" alt="logo 1">
+            </div>
+        </div>
+    </div>
+    <div class="border-bottom"></div>
+    <div class="header-bottom-menu">
+        <div class="container clearfix">
+            <ul>
+                <li><a href="#">Кольца</a></li>
+                <li><a href="#">Серьги</a></li>
+                <li><a href="#">Цепи</a></li>
+                <li><a href="#">Браслеты</a></li>
+                <li><a href="#">Подвески</a></li>
+                <li><a href="#">Колье</a></li>
+                <li><a href="#">Другое</a></li>
+            </ul>
+            <div class="header-search clearfix">
+                <div class="search"><img src="img/search.svg" alt="search"></div>
+                <div class="basket"><img src="img/basket.svg" alt="basket"></div>
+                <div class="items">1</div>
+            </div>
+        </div>
+    </div>
+    <div class="border-bottom"></div>
+    <div class="header-bottom-minimenu">
+        <div class="container ">
+            <div class="minimenu clearfix">
+                <ul>
+                    <li><a href="#">Главная страница</a></li> 
+                    <li><div></div></li>
+                    <li><a href="#">Кольца</a></li>
+                    <li><div></div></li>
+                    <li><a href="#">Акции</a></li>
+                </ul>
+            </div>
+            <div class="hands">
+                <div class="categories">
+                    <span><a href="#">Модели из новых коллекций и настоящие хиты</a></span>
+                    <span><a href="#">Кольца для особых случаев</a></span>
+                    <span><a href="#">Инкрустация камнями и жемчугом</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="catalog">
+        <div class="container clearfix">
+            <div class="filters-wrap">
+                <div class="filter-name">
+                   <span>ФИЛЬТР</span>
+                </div>
+                <form action="http://fe.it-academy.by/TestForm.php" method="get">
+                    <input type="checkbox" name="size" value="13"><span>13</span><br>
+                    <input type="checkbox" name="size" value="13,5"><span>13,5</span><br>
+                    <input type="checkbox" name="size" value="14"><span>14</span><br>
+                    <input type="checkbox" name="size" value="14,5"><span>14,5</span><br>
+                    <input type="checkbox" name="size" value="15"><span>15</span><br>
+                </form>
+            </div>
+            <div class="catalog-item">
+                <div class="sorted clearfix">
+                    <ul>
+                        <li>Сортировка:</li>
+                        <li>
+                            <button><a href="#">Цена</a></button>
+                        </li>
+                        <li>
+                            <button><a href="#">Популярность</a></button>
+                        </li>
+                        <li>
+                            <button><a href="#">Название</a></button>
+                        </li>
+                    </ul>
+                    <div class="iconlist-trumbnails">
+                        <div class="trumbnails">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="iconlist">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rings">
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring1.png" alt="ring1">
+                    </div>
+                    <p>Кольцо обручальное из
+                        розового золота 104006</p>
+                    <span>349.20 руб.</span>
+                    <span>360.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring2.png" alt="ring2">
+                    </div>
+                    <p>Кольцо обручальное из
+                        розового золота 103004</p>
+                    <span>254.41 руб.</span>
+                    <span>253.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring3.png" alt="ring3">
+                    </div>
+                    <p>Кольцо обручальное из
+                        розового золота 103004-9K</p>
+                    <span>155.20 руб.</span>
+                    <span>160.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring4.png" alt="ring4">
+                    </div>
+                    <p>Кольцо обручальное из
+                        серебра 0104006</p>
+                    <span>38.80 руб.</span>
+                    <span>40.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring5.png" alt="ring5">
+                    </div>
+                    <p>Кольцо обручальное из
+                        розового золота 105008</p>
+                    <span>448.14 руб.</span>
+                    <span>462.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring6.png" alt="ring6">
+                    </div>
+                    <p>Кольцо из серебра
+                        с Аметистом 01-0023</p>
+                    <span>53.00 руб.</span>
+                    <span>55.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring7.png" alt="ring7">
+                    </div>
+                    <p>Кольцо из розового золота
+                        с Фианитом 210658</p>
+                    <span>257.00 руб.</span>
+                    <span>265.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring8.png" alt="ring8">
+                    </div>
+                    <p>Кольцо из серебра 
+                        с Фианитом 0210175</p>
+                    <span>63.05 руб.</span>
+                    <span>65.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring9.png" alt="ring9">
+                    </div>
+                    <p>Кольцо из розового золота
+                        с Фианитом 210708</p>
+                    <span>368.60 руб.</span>
+                    <span>380.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring10.png" alt="ring10">
+                    </div>
+                    <p>Кольцо обручальное из
+                        розового золота 145007</p>
+                    <span>750.00 руб.</span>
+                    <span>800.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring11.png" alt="ring11">
+                    </div>
+                    <p>Кольцо из розового золота
+                        с Фианитом 210654</p>
+                    <span>290.00 руб.</span>
+                    <span>305.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring12.png" alt="ring12">
+                    </div>
+                    <p>Кольцо из розового золота
+                        с Фианитом 210709</p>
+                    <span>260.00 руб.</span>
+                    <span>270.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring13.png" alt="ring13">
+                    </div>
+                    <p>Кольцо из розового золота
+                        с Фианитом 210569</p>
+                    <span>155.00 руб.</span>
+                    <span>160.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring14.png" alt="ring14">
+                    </div>
+                    <p>Кольцо из розового золота
+                        с Фианитом 210619</p>
+                    <span>460.00 руб.</span>
+                    <span>480.00 руб.</span>
+                    </div>
+                    <div class="catalog-items">
+                    <div class="items-img">
+                        <img src="img/ring15.png" alt="ring15">
+                    </div>
+                    <p>Кольцо из розового золота
+                        с Фианитом 210614</p>
+                    <span>251.00 руб.</span>
+                    <span>370.00 руб.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page clearfix">
+        <div class="container">
+            <div class="page-numbers">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

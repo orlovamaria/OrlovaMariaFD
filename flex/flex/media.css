@@ -1,0 +1,36 @@
+@media all and (max-width: 700px){
+    img{
+        float: none;
+        width: 98%;
+        height: 300px;
+    }
+}
+@media all and (max-width: 600px){
+    .content-wrap{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .content-menu{
+        background-color: white;
+    }
+    .content{
+        background-image: none;
+    }
+    ul{
+        list-style-type: none;
+        margin-top: 10px;
+    }
+    li{
+        float: left;
+        margin-right: 20px;
+    }
+}
+@media all and (max-width: 500px){
+    .header_footer{
+        height: 70px;
+        text-align: center;
+    }
+    img{
+        height: 250px;
+    }
+}

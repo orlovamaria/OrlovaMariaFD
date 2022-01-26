@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: initial;
+    height: 50px;
+    color: blue;
+    font-size: 24px;
+    background-color: #aed9e7;
+}
+.content-wrap{
+    display: flex;
+    flex-direction: row;
+}
+.content-menu{
+    display: flex;
+    flex-direction: column;
+    background-color: #f0e78d;
+    flex-basis: 200px;
+    align-content: flex-end;
+}
+.content{
+    background-image: url('ball.jpeg');
+    background-repeat: repeat-y;
+    background-position: right;
+    flex-basis: 100%;
+}
+h1{
+    display: flex;
+    justify-content: center;
+}
+img{
+    float: left;
+    width: 200px;
+    height: 150px;
+    margin: 5px;
+}
+p{
+    text-indent: 2em;
+    padding: 0px;
+    margin: 8px;
+}
+ul{
+    margin-left: 20px;
+}
