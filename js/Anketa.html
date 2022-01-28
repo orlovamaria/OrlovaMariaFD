@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var surname = prompt('Введите фамилию:')
+        var name = prompt('Введите имя:')
+
+        var patronymic = prompt('Введите отчество:')
+
+        var age = parseInt(prompt('Ваш возраст в годах:'))
+
+        var age_days = age * 365;
+
+        var age_future = age + 5;
+
+        var gender = confirm('Ваш пол - мужской?')
+        if (gender == true){
+            gender = 'мужской';
+        }
+        else{
+            gender = 'женский';
+        }
+        var retire;
+        if ((age >= 58) && (gender === 'женский')) {
+            retire = 'да';
+        }
+        else if ((age >= 63) && (gender === 'мужской')){
+            retire = 'да';
+        }
+        else{
+            retire = 'нет';
+        }
+
+        var anketa = alert('Ваше ФИО: ' + surname + ' ' + name + ' ' + patronymic + ' ' + '\n' + 
+        'Ваш возраст в годах:' + ' ' + age + '\n' + 'Ваш возраст в днях:' + ' ' + age_days + '\n' + 
+        'Через 5 лет вам будет:' + ' ' + age_future +'\n' + 'Ваш пол:' + ' ' + gender + '\n' + 'Вы на пенсии:' + ' ' + retire)
+    </script>
+</body>
+</html>
