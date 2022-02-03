@@ -12,9 +12,7 @@
     background-color: black;
     
 }
-body{
-    height: 10000px;
-}
+
 .buttons{
     width: 220px;
     height: 55px;
@@ -37,7 +35,6 @@ body{
     width: 50%;
     height: 80px;
     margin: 0 auto;
-    margin-top: 100px;
     margin-bottom: 60px;
     background-color: $black;
     display: flex;
@@ -179,6 +176,7 @@ header{
     background-color: $black;
     .section-skills{
         height: 482px;
+        padding-top: 100px;
         .skills-section-wrapper{
             width: 1400px;
             height: 242px;
@@ -221,7 +219,6 @@ header{
         }
     }
     .section-portfolio{
-        width: 1440px;
         height: 1500px;
         .portfolio-buttons{
             width: 895px;

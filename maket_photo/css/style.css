@@ -9,9 +9,6 @@
   margin: 0 auto;
   background-color: black; }
 
-body {
-  height: 10000px; }
-
 .buttons {
   width: 220px;
   height: 55px;
@@ -34,7 +31,6 @@ body {
   width: 50%;
   height: 80px;
   margin: 0 auto;
-  margin-top: 100px;
   margin-bottom: 60px;
   background-color: #000000;
   display: flex;
@@ -149,7 +145,8 @@ header .header-container {
 .content {
   background-color: #000000; }
   .content .section-skills {
-    height: 482px; }
+    height: 482px;
+    padding-top: 100px; }
     .content .section-skills .skills-section-wrapper {
       width: 1400px;
       height: 242px;
@@ -186,7 +183,6 @@ header .header-container {
           width: 280px;
           height: 72px; }
   .content .section-portfolio {
-    width: 1440px;
     height: 1500px; }
     .content .section-portfolio .portfolio-buttons {
       width: 895px;
