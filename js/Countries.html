@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 300px;
+            height: 50px;
+            margin: 3px;
+        }
+    </style>
+</head>
+<body>
+   <input type="button" value="Ввод информации о стране" onclick="addCountries()"> <br>
+   <input type="button" value="Получение информации о стране" onclick="getCountriesInfo()"> <br>
+   <input type="button" value="Перечень всех стран" onclick="countries()"><br>
+   <input type="button" value="Удаление информации о стране" onclick="deleteCountry()">
+
+            
+
+    <script>
+        var ArrayCountries = {
+            Ukraine: "Kiev",
+            Russia: "Moscow",
+            Belarus: "Minsk"
+        }
+
+        function addCountries(){
+            var CountryName = prompt('Введите название страны:')
+            var capitalName = prompt('Столица введённой страны:')
+            ArrayCountries[CountryName] = capitalName;
+        }
+        
+        function getCountriesInfo(CountryName){
+           var CountryName = prompt('Введите название страны:')
+            if (CountryName in ArrayCountries){
+               console.log('страна: ' + CountryName + ' столица: ' + ArrayCountries[CountryName]);
+            }
+            else{
+                console.log('нет информации о стране!');
+            }
+        }
+
+        function countries(){
+            console.log(ArrayCountries)
+        }
+
+        function deleteCountry(CountryName) {
+            var CountryName = prompt('Введите название страны:')
+            delete ArrayCountries[CountryName];
+    }
+        
+    </script>
+</body>
+</html>
