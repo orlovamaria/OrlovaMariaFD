@@ -13,12 +13,12 @@
             <div class="header-container">
                 <div class="logo"></div>
                 <div class="header-flex">
-                    <ul class="navigation">
-                        <li><a href="#">Skills</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Video</a></li>
-                        <li><a href="#">Price</a></li>
-                        <li><a href="#">Contacts</a></li>
+                    <ul class="navigation" id="menu">
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#video">Video</a></li>
+                        <li><a href="#price">Price</a></li>
+                        <li><a href="#contacts">Contacts</a></li>
                     </ul>
                     <div class="switcher">
                         <span>en</span>
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="content">
-                <div class="section-skills">
+                <div class="section-skills" id="skills">
                     <div class="title-wrapper">
                         <h2 class="title">Skills</h2>
                     </div>
@@ -69,7 +69,7 @@
                         <p class="section-skills-text2">Professional sounds recording for video, advertising, portfolio</p></div>
                     </div>
                 </div>
-                <div class="section-portfolio">
+                <div class="section-portfolio" id="portfolio">
                     <div class="title-wrapper">
                         <h2 class="title">Portfolio</h2>
                     </div>
@@ -88,7 +88,7 @@
                         <img src="./img/jpg/photo6.jpg" alt="photo6" class="photo">
                     </div>
                 </div>
-                <div class="section-video">
+                <div class="section-video" id="video">
                     <div class="title-wrapper">
                         <h2 class="title">Video</h2>
                     </div>
@@ -96,7 +96,7 @@
                         <img src="./img/svg/Play_hover.svg" alt="Play_hover" class="Play_hover">
                     </div>
                 </div>
-                <div class="section-price">
+                <div class="section-price" id="price">
                     <div class="title-wrapper">
                         <h2 class="title">Price</h2>
                     </div>
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="section-contacts">
+                <div class="section-contacts" id="contacts">
                     <form action="http://fe.it-academy.by/TestForm.php" method="get">
                         <h2 class="title contact_me">Contact me</h2>
                         <input type="email" placeholder="E-mail" class="email_phone" name="E-mail">
@@ -169,5 +169,22 @@
             </div>
         </div>
     </footer>
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous">
+        </script>
+        <script>
+            $(document).ready(function(){
+                $('#menu').on('click', 'a', function(e){
+                    e.preventDefault();
+                    var id = $(this).attr('href');
+                    var top = $(id).offset().top
+                    $('html, body').animate({scrollTop: top}, 1000);
+                })
+            })
+
+        </script>
 </body>
 </html>
