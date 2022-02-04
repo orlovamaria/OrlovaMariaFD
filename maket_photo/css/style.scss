@@ -21,7 +21,6 @@
     }
 }
 
-
 *{
     margin: 0;
     padding: 0;
@@ -411,7 +410,7 @@ header{
         .video-player{
             width: 1400px;
             height: 705px;
-            background: url('/maket_photo/img/jpg/video-player.jpg');
+            background: url('../img/jpg/video-player.jpg');
             background-repeat: no-repeat;
             background-position: center;
             margin: 0 auto;
@@ -534,7 +533,7 @@ header{
     }
     .section-contacts{
         height: 700px;
-        background: url('/maket_photo/img/jpg/contacts\ \(1\).jpg');
+        background: url('../img/jpg/contacts\ \(1\).jpg');
         background-size: auto 700px;
         background-position: center center;
         display: flex;
