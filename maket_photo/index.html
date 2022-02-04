@@ -44,22 +44,22 @@
                         <h2 class="title">Skills</h2>
                     </div>
                     <div class="skills-section-wrapper">
-                        <div class="section-skills">
+                        <div class="skills-block">
                             <img src="./img/svg/camera 1.svg" alt="camera 1" class="icon">
                             <p class="section-skills-text1">Digital photography</p>
                             <p class="section-skills-text2">High-quality photos in the studio and on the nature</p>
                         </div>
-                        <div class="section-skills">
+                        <div class="skills-block">
                             <img src="./img/svg/video 1.svg" alt="video 1" class="icon">
                             <p class="section-skills-text1">Video shooting</p>
                             <p class="section-skills-text2">Capture your moments so that they always stay with you</p>
                         </div>
-                        <div class="section-skills">
+                        <div class="skills-block">
                             <img src="./img/svg/image 1.svg" alt="image 1" class="icon">
                             <p class="section-skills-text1">Retouch</p>
                             <p class="section-skills-text2">I strive to make photography surpass reality</p>
                         </div>
-                        <div class="section-skills">
+                        <div class="skills-block">
                             <a href="#">
                                 <svg class="icon">
                                     <use xlink:href="./img/svg/sprite.svg#mic 1"></use>
@@ -140,14 +140,34 @@
                     </div>
                 </div>
                 <div class="section-contacts">
-                    <h2 class="title">Contact me</h2>
-                    
+                    <form action="http://fe.it-academy.by/TestForm.php" method="get">
+                        <h2 class="title contact_me">Contact me</h2>
+                        <input type="email" placeholder="E-mail" class="email_phone" name="E-mail">
+                        <input type="tel" placeholder="Phone" class="email_phone" name="Phone">
+                        <textarea name="Message" placeholder="Message"></textarea>
+                        <input type="submit" value="Send message" class="buttons buttons-beige">
+                    </form>
                 </div>
             </div>
         </div>
     </main>
     <footer>
-        <div class="container"></div>
+        <div class="container">
+            <div class="footer-section">
+                <div class="github">
+                    <span>&#169;</span>
+                    <span>2022</span>
+                    <span>github</span>
+                </div>
+                <div class="Rolling">Rolling Scopes School</div>
+                <div class="social-list">
+                    <img src="img/svg/inst 1.svg" alt="inst">
+                    <img src="img/svg/fb 1.svg" alt="fb">
+                    <img src="img/svg/tw 1.svg" alt="tw">
+                    <img src="img/svg/pinterest 1.svg" alt="pinterest">
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

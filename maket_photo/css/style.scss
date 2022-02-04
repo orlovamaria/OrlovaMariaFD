@@ -1,16 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@700&display=swap");
 @import "variables";
+@mixin _1480 {
+    @media all and (max-width:1480px){
+        @content;
+    }
+}
+@mixin _1320 {
+    @media all and (max-width:1320px){
+        @content;
+    }
+}
+@mixin _1300 {
+    @media all and (max-width: 1050px){
+        @content;
+    }
+}
+@mixin _730 {
+    @media all and (max-width: 730px){
+        @content;
+    }
+}
+
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    overflow-x: hidden;
+}
 .container{
-    width: $container-width;
+    width: 1440px;
     margin: 0 auto;
     background-color: $black;
-    
+    @include _1480{
+        width: 1300px;
+    }
+    @include _1320{
+        width: 1000px;
+    }
+    @include _1300 {
+        width: 700px;
+    }
+    @include _730{
+        width: 500px;
+    }
 }
 
 .buttons{
@@ -40,23 +75,25 @@
     display: flex;
     justify-content: center;
     background-image: linear-gradient(to top, #000 39px, #bdae82 39px, #bdae82 41px, #000 41px);
-    .title{
-        font-family: $Merriweather;
-        font-weight: bold;
-        font-size: $fs40;
-        line-height: 80px;
-        text-align: center;
-        color: $beige;
-        width: auto;
-        background-color: $black;
+    @include _1320{
+        margin-bottom: 45px;
     }
+}
+.title{
+    font-family: $Merriweather;
+    font-weight: bold;
+    font-size: $fs40;
+    line-height: 80px;
+    text-align: center;
+    color: $beige;
+    width: auto;
+    background-color: $black;
 }
 
 //header
 
 header{
     .header-container{
-        width: 1440px;
         height: 90px;
         display: flex;
         justify-content: space-between;
@@ -73,6 +110,9 @@ header{
             background-size: contain;
             background-repeat: no-repeat;  
             transition: 0.3s;
+            @include _1300{
+                margin-left: 60px;
+            }
         }
         .logo:hover {
             filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
@@ -134,6 +174,9 @@ header{
     background-position: center -90px;
     background-repeat: no-repeat;
     position: relative;
+    @include _1300{
+        height: 590px;
+    }
     .hero{
         position: relative;
         width: 500px;
@@ -142,6 +185,14 @@ header{
         position: absolute;
         top: 160px;
         opacity: 0.5;
+        @include _1300{
+            height: 270px;
+            width: 390px;
+            opacity: 1;
+        }
+        @include _730{
+            margin-left: 30px;
+        }
         h1{
             font-family: $Merriweather;
             font-weight: bold;
@@ -152,6 +203,12 @@ header{
             height: 120px;
             position: absolute;
             top: 0px;
+            @include _1300{
+                width: 165px;
+                height: 64px;
+                font-size: $fs32;
+                line-height: 64px;
+            }
         }
         p{
             width: 470px;
@@ -162,6 +219,12 @@ header{
             color: $white;
             position: absolute;
             top: 129px;
+            @include _1300{
+                width: 390px;
+                height: 72px;
+                line-height: 24px;
+                top: 83px;
+            }
         }
         .hire_me{
             position: absolute;
@@ -177,23 +240,58 @@ header{
     .section-skills{
         height: 482px;
         padding-top: 100px;
+        @include _1320{
+            height: 729px;
+            padding-top: 80px;
+        }
+        @include _730{
+            height: 1200px;
+        }
         .skills-section-wrapper{
             width: 1400px;
             height: 242px;
             display: flex;
             justify-content: space-between;
             margin: 0 auto;
-            .section-skills{
+            @include _1480{
+                width: 1260px;
+                padding-left: 40px;
+                padding-right: 44px;
+                padding-top: 9px;
+                padding-bottom: 27px;
+            }
+            @include _1320{
+                width: 728px;
+                height: 520px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            @include _730{
+                width: 500px;
+                height: 1050px;
+                gap: 30px;
+                justify-content: center;
+            }
+            .skills-block{
                 width: 320px;
                 height: 240px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                @include _1320{
+                    width: 300px;
+                    height: 224px;
+                }
                 .icon{
                    display: block;
                    width: 66px;
                    height: 50px;
                    margin-bottom: 50px;
+                   @include _1320{
+                       width: 62px;
+                       margin-bottom: 30px;
+                   }
                 }
                 .section-skills-text1{
                     font-family: $Inter;
@@ -214,12 +312,26 @@ header{
                     color: $white;
                     width: 280px;
                     height: 72px;
+                    @include _1320{
+                        height: 44px;
+                    }
                 }
             }
         }
     }
     .section-portfolio{
         height: 1500px;
+        padding-top: 100px;
+        @include _1480{
+            height: 1380px;
+        }
+        @include _1320{
+            padding-top: 80px;
+            height: 1895px;
+        }
+        @include _1300{
+            height: 3870px;
+        }
         .portfolio-buttons{
             width: 895px;
             height: 55px;
@@ -227,6 +339,14 @@ header{
             justify-content: space-between;
             margin: 0 auto;
             margin-top: 60px;
+            @include _1300{
+                width: 445px;
+                height: 115px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-top: 50px;
+            }
         }
         .photo-wrapper{
             width: 1400px;
@@ -236,14 +356,58 @@ header{
             gap: 25px;
             margin: 0 auto;
             margin-top: 60px;
+            @include _1480{
+                width: 1260px;
+                height: 1025px;
+            }
+            @include _1320{
+                width: 940px;
+                height: 1540px;
+                gap: 20px;
+            }
+            @include _1300{
+                height: 3485px;
+                width: 700px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+            @include _730{
+                width: 500px;
+            }
             .photo{
                width: 450px;
                height: 560px;
+               @include _1480{
+                   width: 403px;
+                   height: 500px;
+               }
+               @include _1320{
+                   width: 460px;
+               }
+               @include _1300{
+                   width: 450px;
+                   height: 560px;
+               }
             }
         }
     }
     .section-video{
         height: 945px;
+        padding-top: 100px;
+        @include _1320{
+            padding-top: 80px;
+        }
+        @include _1320{
+            height: 868px;
+        }
+        @include _1300{
+            height: 720px;
+        }
+        @include _730{
+            height: 492px;
+        }
         .video-player{
             width: 1400px;
             height: 705px;
@@ -255,21 +419,63 @@ header{
             display: flex;
             justify-content: center;
             align-items: center;
+            @include _1480{
+                width: 1300px;
+            }
+            @include _1320{
+                width: 1000px;
+                height: 628px;
+            }
+            @include _1300{
+                width: 700px;
+                height: 400px;
+            }
+            @include _730{
+                height: 300px;
+                width: 500px;
+            }
             .Play_hover{
                 display: block;
                 width: 130px;
                 height: 130px;
+                @include _1320{
+                    width: 75px;
+                    height: 75px;
+                }
             }
         }
     }
     .section-price{
         height: 845px;
+        padding-top: 100px;
+        @include _1480{
+            height: 790px;
+        }
+        @include _1320{
+            padding-top: 80px;
+            height: 1905px;
+        }
         .price-wrapper{
             width: 1400px;
             height: 505px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
+            @include _1480{
+                width: 1260px;
+                height: 450px;
+            }
+            @include _1320{
+                width: 1000px;
+                height: 1615px;
+                display: block;
+            }
+            @include _1300{
+                width: 700px;
+            }
+            @include _730{
+                width: 500px;
+            }
             .price-infoblock{
                 width: 450px;
                 height: 505px;
@@ -279,6 +485,16 @@ header{
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                @include _1480{
+                    width: 403px;
+                    height: 450px;
+                }
+                @include _1320{
+                    width: 420px;
+                    height: 505px;
+                    margin: 0 auto;
+                    margin-bottom: 50px;
+                }
                 p:first-child{
                     height: 56px;
                     margin-bottom: 20px;
@@ -319,9 +535,107 @@ header{
     .section-contacts{
         height: 700px;
         background: url('/maket_photo/img/jpg/contacts\ \(1\).jpg');
-        background-repeat: no-repeat;
-        .contacts-bg{
-            
+        background-size: auto 700px;
+        background-position: center center;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20px;
+        padding-top: 60px;
+        @include _1300{
+            justify-content: center;
+        }
+        form{
+            width: 450px;
+            height: 445px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            @include _1300{
+                align-items: center;
+            }
+            .contact_me{
+                background-color: inherit;
+                width: 450px;
+                height: 80px;
+                margin-bottom: 40px;
+                text-align: left;
+                @include _1300{
+                    text-align: center;
+                }
+            }
+            .email_phone{
+                width: 450px;
+                height: 50px;
+                margin-bottom: 20px;
+                padding-top: 5px;
+                padding-left: 20px;
+                background-color: inherit;
+                border: 2px solid $beige;
+            }
+            textarea{
+                resize: none;
+                width: 450px;
+                height: 100px;
+                margin-bottom: 30px;
+                padding-top: 5px;
+                padding-left: 20px;
+                background-color: inherit;
+                border: 2px solid $beige;
+                font-family: $Inter;
+                color: $beige;
+                font-size: 20px;
+            }
+            ::placeholder {
+                font-family: inherit;
+                color: $beige;
+                font-size: 20px;
+            }
+        }
+    }
+}
+.footer-section{
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-right: 20px;
+    padding-left: 27px;
+    @include _1300{
+        height: 190px;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 28px;
+    }
+    .github{
+        width: 182px;
+        height: 50px;
+        font-family: $Inter;
+        font-size: $fs20;
+        line-height: 50px;
+        color: $white;
+        display: flex;
+        justify-content: space-between;
+        span{
+           display: block;
+        }
+    }
+    .Rolling{
+        width: 211px;
+        height: 50px;
+        font-family: $Inter;
+        font-size: $fs20;
+        line-height: 50px;
+        color: $white;
+    }
+    .social-list{
+        width: 188px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        img{
+            display: block;
+            width: 32px;
+            height: 32px;
         }
     }
 }
