@@ -13,6 +13,10 @@
             <div class="header-container">
                 <div class="logo"></div>
                 <div class="header-flex">
+                    <div id="hide_button">
+                        <img src="./img/svg/hamburger_hover.svg" alt="hamburger_hover" id="open">
+                        <img src="./img/svg/close.svg" alt="close" id="close">
+                    </div>
                     <ul class="navigation" id="menu">
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
@@ -182,7 +186,18 @@
                     var id = $(this).attr('href');
                     var top = $(id).offset().top
                     $('html, body').animate({scrollTop: top}, 1000);
-                })
+                });
+                $('#open').click(function(){
+                    $('#menu').css('transform', 'translate(0)');
+                    $(this).hide();
+                    $('#close').show();
+                });
+                $('#close').click(function(){
+                    $('#menu').css('transform', 'translate(100%)');
+                    $(this).hide();
+                    $('#open').show();
+                });
+
             })
 
         </script>
