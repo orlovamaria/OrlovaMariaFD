@@ -23,20 +23,49 @@
     <div class="header">
         <div class="container">
             <div class="header-menu">
-                <ul>
-                    <li>Каталог</li>
-                    <li>Оплата и доставка</li>
-                    <li>Бонусная программа</li>
-                    <li>О компании</li>
-                    <li>Контакты</li>
+                <ul class="menu-first-level">
+                    <li class="menu-first-level-li">
+                        <a href="">Каталог</a>
+                        <!-- <span class="menu-arrow-header arrow-header"></span> -->
+                        <ul class="sub-menu-list">
+                            <li>
+                                <a href="index2.html" class="sub-menu-link">Макраме</a>
+                            </li>
+                            <li>
+                                <a href="#">Вязание</a>
+                            </li>
+                            <li>
+                                <a href="#">Вышивка</a>
+                            </li>
+                            <li>
+                                <a href="#">Лепка</a>
+                            </li>
+                            <li>
+                                <a href="#">Инструменты</a>
+                            </li>
+                            <li>
+                                <a href="#">Упаковка</a>
+                            </li>
+                            <li>
+                                <a href="#">Товары для творчества</a>
+                            </li>
+                            <li>
+                                <a href="#">Книги</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="index4.html">Оплата и доставка</a></li>
+                    <li><a href="#">Бонусная программа</a></li>
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Контакты</a></li>
                 </ul>
-                <div class="logo"></div>
+                <a href="index.html" class="logo"></a>
                 <div class="buttons">
                     <div class="search">
                         <img src="./img/header-menu/search.svg" alt="search" >
                         <input type="text" placeholder="Поиск товара" class="button-grey">
                     </div>
-                    <button class="user button-grey"><span>Войти</span></button>
+                    <button class="user button-grey"><a href="#popup" class="popup-link">Войти</a></button>
                     <div class="heart">
                         <button class="button-grey"><span>Избранное</span></button>
                         <div><span>2</span></div>
@@ -50,8 +79,8 @@
             </div>
             <div class="header-slider">
                 <div class="header-text">
-                    <h1>Пряжа Macrametr</h1>
-                    <p>Повседневная практика показывает, что укрепление 
+                    <h1 class="_anim-items _anim-no-hide">Пряжа Macrametr</h1>
+                    <p class="_anim-items _anim-no-hide">Повседневная практика показывает, что укрепление 
                         и развитие внутренней структуры обеспечивает широкому кругу (специалистов) 
                         участие в формировании форм воздействия. </p>
                     <button class="button-rose"><span>В каталог</span></button>
@@ -63,51 +92,173 @@
     <div class="catalog-macrame">
         <div class="container">
             <div class="catalog-macrame-header">
-                <div>
-                    <div>
-                        <span>Главная</span>
-                        <span>Каталог</span>
-                        <span>Макраме</span>
+                    <ul class="bread-crumbs">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="index.html">Каталог</a></li>
+                        <li><a href="index2.html">Макраме</a></li>
+                    </ul>
+                    <div class="macrame-button">
+                        <button class="button-grey button-price-down"><span>Цена</span></button>
+                        <button class="button-grey button-price-up"><span>Цена</span></button>
                     </div>
-                    <div>
-                        <button>Цена</button>
-                        <button>Цена</button>
-                    </div>
-                </div>
             </div>
             <div class="catalog-macrame-wrapper">
-                <div class="catalog-macrame-form">
-                    <form action="http://fe.it-academy.by/TestForm.php" method="get">
-                        <label for="">Тип изделий <br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>Шпагат, шнуры, веревки</span><br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>Кольца, бусины</span><br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>Джут</span><br>
-                        </label>
-                        <div></div>
-                        <label for="">Состав<br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>Хлопок</span><br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>Синтетика</span><br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>С сердечником</span><br>
-                        </label>
-                        <div></div>
-                        <label for="">Диаметр<br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>3 мм</span><br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>4 мм</span><br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>4,5 мм</span><br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>5 мм</span><br>
-                        </label>
-                        <div></div>
-                        <label for="">Производитель<br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>Macrametr</span><br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>Зефирка</span><br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>Гамма</span><br>
-                            <input type="checkbox" placeholder="" class="macrame-checkbox"><span>Сибшнур</span><br>
-                        </label>
-                        <input type="submit" class="button-rose" value="показать"><br>
-                        <input type="reset" class="button-grey" value="очистить">
-                    </form>
+                <div class="catalog-macrame-form block">
+                    <div class="block-item">
+                        <div class="macrame-checkbox block-title">Тип изделий </div>
+                        <div class="block-inputs">
+                            <input type="checkbox" id="shpagat" name="tip" class="macrame_input">
+                            <label for="shpagat">Шпагат, шнуры, веревки</label>
+                        
+                            <input type="checkbox" id="rings" name="tip" class="macrame_input">
+                            <label for="rings">Кольца, бусины</label>
+                        
+                            <input type="checkbox" id="jut" name="tip" class="macrame_input">
+                            <label for="jut">Джут</label>
+                        </div>
+                        </div>
+                        <div class="band"></div>
+                        <div class="block-item">
+                            <div class="macrame-checkbox indent block-title">Состав</div>
+                            <div class="block-inputs">
+                                <input type="checkbox" id="hlopok" name="sostav" class="macrame_input">
+                                <label for="hlopok">Хлопок</label>
+                            
+                                <input type="checkbox" id="sintetika" name="sostav" class="macrame_input">
+                                <label for="sintetika">Синтетика</label>
+                            
+                                <input type="checkbox" id="serdechnik" name="sostav" class="macrame_input">
+                                <label for="serdechnik">С сердечником</label>
+                            </div>
+                        </div>
+                        <div class="band"></div>
+                        <div class="block-item">
+                            <div class="macrame-checkbox indent block-title">Диаметр</div>
+                            <div class="block-inputs">
+                                <input type="checkbox" id="3" name="diametr" class="macrame_input">
+                                <label for="3">3 мм</label>
+                            
+                                <input type="checkbox" id="4" name="diametr" class="macrame_input">
+                                <label for="4">4 мм</label>
+    
+                                <input type="checkbox" id="4_5" name="diametr" class="macrame_input">
+                                <label for="4_5">4,5 мм</label>
+                            
+                                <input type="checkbox" id="5" name="diametr" class="macrame_input">
+                                <label for="5">5 мм</label>
+                            </div>
+                        </div>
+                        <div class="band"></div>
+                        <div class="block-item">
+                            <div class="macrame-checkbox indent block-title">Производитель</div>
+                            <div class="block-inputs">
+                                <input type="checkbox" id="Macrametr" name="proizvoditel" class="macrame_input">
+                                <label for="Macrametr">Macrametr</label>
+                            
+                                <input type="checkbox" id="zefirka" name="proizvoditel" class="macrame_input">
+                                <label for="zefirka">Зефирка</label>
+    
+                                <input type="checkbox" id="gamma" name="proizvoditel" class="macrame_input">
+                                <label for="gamma">Гамма</label>
+                            
+                                <input type="checkbox" id="sibshnur" name="proizvoditel" class="macrame_input">
+                                <label for="sibshnur">Сибшнур</label>
+                            </div>
+                        </div>
+
+
+                            <input type="submit" class="button-rose macrame-show" value="Показать"><br>
+                            <input type="reset" class="button-grey macrame-clear" value="Очистить">
+
+                            <p>Подобрано 6 товаров</p>
                 </div>
-                <div class="catalog-macrame-item"></div>
+                <div class="catalog-macrame-item">
+                    <div class="macrame-item item-hover">
+                        <div class="macrame-item-header"></div>
+                        <div class="item-macrametr"></div>
+                        <p class="macame-item-text"><a href="index3.html">Шпагат Macrametr <br> 4 мм, 100 нитей</a></p>
+                        <div class="macrame-item-circle">
+                            <div class="item-circle color-1"></div>
+                            <div class="item-circle color-2"></div>
+                            <div class="item-circle color-3"></div>
+                            <div class="item-circle color-4"></div>
+                            <span>&#43;5</span>
+                        </div>
+                        <p class="item-price">332 &#8381; </p>
+                        <button class="item-button-grey"></button>
+                    </div>
+                    <div class="macrame-item item-hover">
+                        <div class="macrame-item-header"></div>
+                        <div class="item-sibshnur"></div>
+                        <p class="macame-item-text">Шпагат джутовый Сибшнур 500 м</p>
+                        <div class="macrame-item-circle">
+                            <div class="item-circle color-4"></div>
+                            <div class="item-circle color-5"></div>
+                            <div class="item-circle color-6"></div>
+                        </div>
+                        <p class="item-price-sale">422 &#8381;</p>
+                        <button class="item-button-grey"></button>
+                    </div>
+                    <div class="macrame-item item-hover">
+                        <div class="macrame-item-header"></div>
+                        <div class="item-maxi"></div>
+                        <p class="macame-item-text">Пряжа Arachna "Macrame MAXI"</p>
+                        <div class="macrame-item-circle">
+                            <div class="item-circle color-18"></div>
+                            <div class="item-circle color-8"></div>
+                            <div class="item-circle color-9"></div>
+                            <div class="item-circle color-10"></div>
+                            <span>&#43;2</span>
+                        </div>
+                        <p class="item-price">1092 &#8381; </p>
+                        <button class="item-button-rose">
+                            <img src="./img/catalog_macrame/mcwhitebasket.svg" alt="white_basket">
+                            <span>В корзину</span>
+                        </button>
+                    </div>
+                    <div class="macrame-item item-hover">
+                        <div class="macrame-item-header"></div>
+                        <div class="item-mini"></div>
+                        <p class="macame-item-text">Пряжа Arachna "Macrame MINI"</p>
+                        <div class="macrame-item-circle">
+                            <div class="item-circle color-18"></div>
+                            <div class="item-circle color-8"></div>
+                            <div class="item-circle color-9"></div>
+                            <div class="item-circle color-10"></div>
+                            <span>&#43;2</span>
+                        </div>
+                        <p class="item-price">1053 &#8381; </p>
+                        <button class="item-button-grey"></button>
+                    </div>
+                    <div class="macrame-item item-hover">
+                        <div class="macrame-item-header"></div>
+                        <div class="item-gamma"></div>
+                        <p class="macame-item-text">Шнур "Gamma" 0.8 мм, 50 м</p>
+                        <div class="macrame-item-circle">
+                            <div class="item-circle color-11"></div>
+                            <div class="item-circle color-12"></div>
+                            <div class="item-circle color-13"></div>
+                            <div class="item-circle color-14"></div>
+                            <span>&#43;4</span>
+                        </div>
+                        <p class="item-price">852 &#8381; </p>
+                        <button class="item-button-grey"></button>
+                    </div>
+                    <div class="macrame-item item-hover">
+                        <div class="macrame-item-header"></div>
+                        <div class="item-zefirka"></div>
+                        <p class="macame-item-text">Веревка “Zефирка” <br> 4 мм, 100 м</p>
+                        <div class="macrame-item-circle">
+                            <div class="item-circle color-15"></div>
+                            <div class="item-circle color-16"></div>
+                            <div class="item-circle color-17"></div>
+                            <div class="item-circle color-9"></div>
+                            <span>&#43;1</span>
+                        </div>
+                        <p class="item-price">617 &#8381; </p>
+                        <button class="item-button-grey"></button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -145,5 +296,33 @@
                 Условия использования и политика конфиденциальности</p>
         </div>
     </div>
+
+    <div class="popup" id="popup">
+        <div class="popup_body">
+            <div class="popup-content">
+                <a href="#" class="popup_close"></a>
+                <h2>Войти в личный кабинет</h2>
+                <form>
+                    <input type="tel" placeholder="Номер телефона">
+                    <input type="password" placeholder="Пароль">
+        
+                    <input type="checkbox">
+                    <label class="check" for="checkbox">Запомнить меня</label>
+        
+                    <div id="lower">
+                        <input type="submit" value="Войти" class="button-rose forma-button">
+                        <p><a href="#">Забыли пароль?</a></p>
+                    </div>
+                    <div class="form-line"></div>
+                    <p class="register">Вы еще не зарегистрированы?</p>
+                    <button class="button-grey button-form-reg"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
