@@ -1,5 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Spectral+SC:wght@500;600&family=Spectral:wght@500&display=swap');
 @import "variables";
+@mixin _1740 {
+    @media all and (max-width: 1740px){
+        @content;
+    }
+}
+@mixin _1664 {
+    @media all and (max-width: 1664px){
+        @content;
+    }
+}
+@mixin _1535 {
+    @media all and (max-width: 1535px){
+        @content;
+    }
+}
+@mixin _1441 {
+    @media all and (max-width: 1441px){
+        @content;
+    }
+}
+@mixin _1320 {
+    @media all and (max-width: 1320px){
+        @content;
+    }
+}
+@mixin _1227 {
+    @media all and (max-width: 1227px){
+        @content;
+    }
+}
+@mixin _940 {
+    @media all and (max-width: 940px){
+        @content;
+    }
+}
+@mixin _939 {
+    @media all and (max-width: 939px){
+        @content;
+    }
+}
 
 *{
     margin: 0;
@@ -9,6 +49,18 @@
 .container{
     width: $container-width;
     margin: 0 auto;
+    @include _1664{
+        width: 1400px;
+    }
+    @include _1441{
+        width: 1200px;
+    }
+    @include _1227{
+        width: 900px;
+    }
+    @include _940{
+        width: 100%;
+    }
 }
 li{
     list-style-type: none;
@@ -17,6 +69,13 @@ li{
     font-size: $fs16;
     line-height: 20px;
     color: $darkgrey;
+    @include _1664{
+        font-size: $fs14;
+        line-height: 16px;
+    }
+    @include _1441{
+        font-size: $fs12;
+    }
 }
 a{
     text-decoration: none;
@@ -24,6 +83,11 @@ a{
 }
 body{
     background: $grey;
+}
+body.lock{
+    @include _1227{
+        overflow: hidden;
+    }
 }
 .sectors{
     font-family: $ffSpectralSC;
@@ -62,6 +126,9 @@ body{
     color: $lightgrey;  
     background: $grey;
     outline: none;
+    @include _1441{
+        font-size: $fs12;
+    }
 }
 .button-grey:hover{
     background: white;
@@ -340,21 +407,29 @@ body{
     transition: all 0.8s ease 0s;
 }
 
-
 //Главная страница
 
 //header
 
 .header-top{
-    width: 100%;
-    height: 45px;
     background: $rose;
-    font-family: $ffMontserrat;
-    font-size: $fs14;
-    color: $white; 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    .header-top-container{
+        height: 45px;
+        font-family: $ffMontserrat;
+        font-size: $fs14;
+        color: $white; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include _940{
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    }
     .phone{
         width: 150px;
         height: 17px; 
@@ -391,27 +466,129 @@ body{
     .header-menu{
         margin-top: 45px;
         display: flex;
-        .menu-first-level{ width: 701px;
+        @include _1441{
+            display: flex;
+            justify-content: space-between;
+        }
+        @include _1227{
+            display: flex;
+            justify-content: flex-start;
+        }
+        @include _940{
+            margin-bottom: 20px;
+        }
+        .header-burger{
+            @include _1227{
+                display: block;
+                position: relative;
+                width: 30px;
+                height: 20px;
+                z-index: 51;
+                margin-left: 150px;
+                margin-top: 70px;
+                margin-right: 211px;
+            }
+            @include _940{
+                margin-left: 250px;
+                margin-right: 111px;
+            }
+            span{
+                @include _1227{
+                    position: absolute;
+                    background-color: #CFA5A5;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    top: 9px;
+                    transition: all 0.3s ease 0s;
+                }
+            }
+        }
+        .header-burger::before,
+        .header-burger::after{
+            @include _1227{
+                content: '';
+                background-color: #CFA5A5;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                left: 0;
+                transition: all 0.3s ease 0s;
+            }
+        }
+        .header-burger::before{
+            @include _1227{
+                top: 0;
+            }
+        }
+        .header-burger::after{
+            @include _1227{
+                bottom: 0;
+            }
+        }
+        .header-burger.__active:before{
+            @include _1227{
+               transform: rotate(45deg);
+               top: 9px;
+            }
+        }
+        .header-burger.__active:after{
+            @include _1227{
+               transform: rotate(-45deg);
+               bottom: 9px;
+            }
+        }
+        .header-burger.__active span{
+            @include _1227{
+               transform: scale(0);
+            }
+        }
+        .menu-first-level{ 
+            width: 701px;
             height: 20px;
             margin-top: 19px;
             margin-right: 48px;
             display: flex;
             justify-content: space-between;
+            @include _1664{
+                width: 600px;
+            }
+            @include _1441{
+                width: 500px;
+                margin-right: 30px;
+            }
+            @include _1227{
+                position: fixed;
+                top: 0;
+                left: -50%;
+                width: 50%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.9);
+                display: block;
+                margin: 0;
+                z-index: 50;
+                padding-top: 198px;
+                padding-left: 92px;
+                transition: all 0.5s ease 0s;
+                overflow: auto;
+                @include _940{
+                    padding-top: 222px;
+                }
+            }
+            li{
+                @include _1227{
+                    font-size: $fs18;
+                    line-height: 58px;
+                }
+            }
             .menu-first-level-li{
                 position: relative;
                 padding-bottom: 20px;
+                @include _1227{
+                    padding-bottom: 0;
+                }
                 .menu-arrow-header{
 
-                }
-                .arrow-header{
-                    width: 0;
-                    height: 0;
-                    border-top: 10px solid white;
-                    border-right: 10px solid transparent;
-                    border-left: 10px solid transparent;
-                    position: absolute;
-                    right: -23px;
-                    top: 1px;
                 }
                 .sub-menu-list{
                     display: none;
@@ -419,6 +596,10 @@ body{
                     left: 0;
                     top: 18px;
                     z-index: 1;
+                    @include _1227{
+                        left: 69px;
+                        top: 37px;
+                    }
                     li{
                         position: relative;
                         width: 250px;
@@ -428,6 +609,16 @@ body{
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        @include _1227{
+                              width: 242px;
+                              height: 32px;
+                              background-color: #CFA5A5;
+                              border: solid 1px white;
+                        }
+                        @include _940{
+                            width: 170px;
+                            font-size: 12px;
+                        }
                         .sub-menu-link{
 
                         }
@@ -438,18 +629,48 @@ body{
                 display: block;
             }
         }
+        .menu-first-level.__active{
+            @include _1227{
+                left: 0;
+            }
+        }
         .logo{
             width: 122px;
             height: 62px;
             margin-right: 50px;
             background: url('../img/header-menu/logo.png');
+            @include _1441{
+                margin-right: 30px;
+            }
+            @include _1227{
+                margin: auto 0;
+                margin-right: 166px;
+            }
+            @include _940{
+                margin-right: 73px;
+            }
         }
         .buttons{
             display: flex;
             margin-top: 9px;
+            @include _1227{
+                display: inline-block;
+                text-align: center;
+                margin-top: 0;
+                padding-right: 0px;
+            }
             .search{
                 position: relative;
                 margin-right: 51px;
+                @include _1664{
+                    margin-right: 20px;
+                }
+                @include _1441{
+                    margin-right: 10px;
+                }
+                @include _1227{
+                    margin-bottom: 3px;
+                }
                img{
                     display: block;
                     width: 11px;
@@ -457,11 +678,23 @@ body{
                     position: absolute;
                     top: 14px;
                     left: 172px;
+                    @include _1664{
+                        left: 145px;
+                    }
+                    @include _1441{
+                        left: 130px;
+                    }
                }
                input{
                     width: 198px;
                     height: 38px;
                     padding-left: 18px;
+                    @include _1664{
+                        width: 170px;
+                    }
+                    @include _1441{
+                        width: 150px;
+                    }
                }
             }
             .user{
@@ -469,6 +702,16 @@ body{
                 height: 38px;
                 margin-right: 50px;
                 padding-left: 18px;
+                @include _1664{
+                    margin-right: 20px;
+                }
+                @include _1441{
+                    margin-right: 10px;
+                }
+                @include _1227{
+                    width: 110px;
+                    margin-bottom: 3px;
+                }
                 a{
                     display: block;
                     margin-right: 10px;
@@ -487,6 +730,17 @@ body{
                     width: 135px;
                     height: 38px;
                     margin-right: 50px;
+                    @include _1664{
+                        margin-right: 20px;
+                    }
+                    @include _1441{
+                        width: 101px;
+                        margin-right: 10px;
+                    }
+                    @include _1227{
+                        width: 110px;
+                        margin-bottom: 3px;
+                    }
                     span{
                         display: block;
                     }
@@ -511,6 +765,13 @@ body{
                     position: absolute;
                     top: -7px;
                     right: 53px;
+                    @include _1664{
+                        right: 25px;
+                    }
+                    @include _1227{
+                        top: 2px;
+                        right: 22px;
+                    }
                     span{
                         
                     }
@@ -520,7 +781,14 @@ body{
                 position: relative;
                 button{
                     width: 114px;
-                    height: 38px; 
+                    height: 38px;
+                    @include _1441{
+                        width: 101px;
+                    } 
+                    @include _1227{
+                        width: 110px;
+                        margin-left: -10px;
+                    }
                     span{
                         display: block;
                     }
@@ -547,12 +815,15 @@ body{
                     span{
 
                     }
+                    @include _1227{
+                        top: 2px;
+                        right: 22px;
+                    }
                 }
             }
         }
     }
     .header-slider{
-        width: 1618px;
         height: 542px;
         background: url('../img/header-slider/15.svg') 1346px 476px no-repeat,
                     url('../img/header-slider/Vector.svg') 676px 349px no-repeat,
@@ -562,6 +833,49 @@ body{
                     url('../img/header-slider/hsbg2.png') -32px 50px no-repeat;
         border-radius: 21px;
         position: relative;
+        @include _1664{
+            height: 542px;
+            background: url('../img/header-slider/15.svg') 1139px 476px no-repeat,
+                        url('../img/header-slider/Vector.svg') 616px 349px no-repeat,
+                        url('../img/header-slider/hit.svg') 1116px 3px no-repeat,
+                        url('../img/header-slider/balls.png') -84px 78px no-repeat,
+                        url('../img/header-slider/hsbg1.png') -221px 80px no-repeat,
+                        url('../img/header-slider/hsbg2.png') -49px 50px no-repeat;
+            border-radius: 31px;
+        }
+        @include _1441{
+            height: 542px;
+            background: url('../img/header-slider/15.svg') 959px 476px no-repeat,
+                        url('../img/header-slider/Vector.svg') 509px 349px no-repeat,
+                        url('../img/header-slider/hit.svg') 920px 3px no-repeat,
+                        url('../img/header-slider/balls.png') -160px 78px no-repeat,
+                        url('../img/header-slider/hsbg1.png') -387px 80px no-repeat,
+                        url('../img/header-slider/hsbg2.png') -49px 50px no-repeat;
+        }
+        @include _1227{
+            height: 400px;
+            background: url('../img/header-slider/15.svg') 808px 359px no-repeat,
+                        url('../img/header-slider/Vector.svg') 403px 308px no-repeat,
+                        url('../img/header-slider/hit.svg') 703px 3px no-repeat,
+                        url('../img/header-slider/balls.png') -172px 6px no-repeat,
+                        url('../img/header-slider/hsbg1.png') -717px 79px no-repeat,
+                        url('../img/header-slider/hsbg2.png') -49px 50px no-repeat;
+        }
+        @include _940{
+            height: 400px;
+            background: url('../img/header-slider/15.svg') 808px 359px no-repeat,
+                        url('../img/header-slider/Vector.svg') 403px 308px no-repeat,
+                        url('../img/header-slider/hit.svg') 703px 3px no-repeat,
+                        url('../img/header-slider/balls.png') -172px 6px no-repeat,
+                        url('../img/header-slider/hsbg1.png') -697px 79px no-repeat,
+                        url('../img/header-slider/hsbg2.png') -49px 50px no-repeat;
+            border-radius: 0px;
+        }
+        @include _940{
+            height: 300px;
+            background:
+                        url('../img/header-slider/hsbg2.png') -49px -48px no-repeat;
+        }
         .header-text{
             height: 263px;
             width: 446px;
@@ -571,6 +885,22 @@ body{
             position: absolute;
             top: 181px;
             right: 352px;
+            @include _1664{
+                right: 216px;
+            }
+            @include _1441{
+                right: 125px;
+            }
+            @include _1227{
+                width: 310px;
+                right: 80px;
+                top: 160px;
+            }
+            @include _940{
+                width: 270px;
+                right: 115px;
+                top: 65px;
+            }
             h1{
                 width: 312px;
                 height: 18px;
@@ -586,6 +916,15 @@ body{
                 transform: translate(0px, 120%);
                 opacity: 0;
                 transition: all 0.8s ease 0s;
+                @include _1227{
+                    font-size: 22px;
+                    margin-bottom: 20px;
+                }
+                @include _940{
+                    width: 200px;
+                    font-size: 16px;
+                    margin-bottom: 20px;
+                }
             }
             h1._active{
                 transform: translate(0px, 0px);
@@ -604,6 +943,16 @@ body{
                 transform: translate(0px, 120%);
                 opacity: 0;
                 transition: all 0.8s ease 0s;
+                @include _1227{
+                    width: 310px;
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                }
+                @include _940{
+                    width: 270px;
+                    font-size: 14px;
+                    margin-bottom: 30px;
+                }
             }
             p._active{
                 transform: translate(0px, 0px);
@@ -618,6 +967,12 @@ body{
                 align-items: center;
                 padding: 13px 45px;
                 border: none;
+                @include _1227{
+                    width: 150px;
+                    height: 40px;
+                    font-size: 10px;
+                    margin-bottom: 20px;
+                }
             }
         }
     }
@@ -627,6 +982,9 @@ body{
 
 .popular{
     height: 658px;
+    @include _1227{
+        height: 604px;
+    }
     .popular-header{
         color: $colorpopular;
     }
@@ -675,21 +1033,47 @@ body{
         position: relative;
         padding-right: 22px;
         padding-left: 22px;
+        @include _1740{
+            width: 1500px;
+        }
+        @include _1535{
+            width: 1200px;
+        }
+        @include _1227{
+            width: 800px;
+        }
+        @include _940{
+            width: 500px;
+        }
         .slider-item{
             text-align: center;
             img{
                 width: 300px;
                 height: 487px;
             }
-            p{  width: 192px;
+            p{  
                 position: absolute;
-                bottom: 58px;
+                bottom: 35px;
                 height: 22px;
                 font-family: $ffMontserrat;
                 font-weight: 600;
                 font-size: $fs18;
                 line-height: 22px;
                 color: $white;
+                padding-left: 41px;
+                @include _1740{
+                    padding-left: 57px;
+                }
+                @include _1535{
+                    padding-left: 64px;
+                }
+                @include _1320{
+                    padding-left: 60px;
+                }
+            }
+            .text-sl{
+                text-align: left;
+                bottom: 58px;
             }
         }
         .slick-arrow{
@@ -721,6 +1105,12 @@ body{
 .catalog{
     height: 835px;
     background: url('../img/catalog/catalogbg.png') 0px 38px no-repeat;
+    @include _1441{
+        height: 1150px;
+    }
+    @include _1227{
+        height: 1470px;
+    }
     .catalog-head{
         width: 289px;
         height: 43px;
@@ -733,6 +1123,13 @@ body{
         flex-wrap: wrap;
         gap: 40px;
         height: 600px;
+        @include _1664{
+            gap: 10px;
+        }
+        @include _1441{
+            gap: 50px;
+            justify-content: center;
+        }
         .catalog-item{
             width: 375px;
             height: 280px;
@@ -741,6 +1138,9 @@ body{
             border-radius: 20px;
             padding-left: 32px;
             padding-top: 35px;
+            @include _1664{
+                width: 340px;
+            }
             .catalog-item-header{
                 width: 250px;
                 height: 38px;
@@ -809,6 +1209,9 @@ body{
 .benefits{
     height: 346px;
     margin-bottom: 54px;
+    @include _1227{
+        margin-bottom: 30px;
+    }
     .benefits-wrapper{
         .benefits-header{
             width: 436px;
@@ -831,6 +1234,9 @@ body{
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+            @include _1664{
+                width: 400px;
+            }
             .benefits-text1{
                 width: 189px;
                 height: 37px;
@@ -842,6 +1248,14 @@ body{
                 color: $darkgrey;
                 margin-bottom: 8px;
                margin-right: 177px;
+               @include _1664{
+                width: 150px;
+                margin-right: 102px;
+               }
+               @include _1227{
+                   font-size: 16px;
+                   margin-right: 20px;
+               }
             }
             .benefits-text2{
                 width: 365px;
@@ -850,6 +1264,14 @@ body{
                 font-size: $fs16;
                 line-height: 140%;
                 color: $darkgrey;
+                @include _1664{
+                    width: 250px;
+                    height: 110px;
+                }
+                @include _1227{
+                    width: 170px;
+                    font-size: 12px;
+                }
             }
         }
         .suppliers{
@@ -872,6 +1294,12 @@ body{
 .instagram{
     height: 1495px;
     background: url('../img/instagram/instagram.png') right 1px no-repeat;
+    @include _1664{
+        height: 1100px;
+    }
+    @include _1664{
+        height: 800px;
+    }
     .instagram-header{
         width: 260px;
         height: 43px;
@@ -881,6 +1309,10 @@ body{
     .instagram-image{
         display: flex; 
         flex-direction: row;
+        @include _1664{
+            display: flex;
+            flex-direction: column;
+        }
         .instagram-image-block1{
             display: inline;
             width: 800px; 
@@ -888,13 +1320,62 @@ body{
             display: flex; 
             flex-wrap: wrap; 
             gap: 20px;
+            @include _1664{
+                width: 100%;
+                height: 390px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            @include _1227{
+                height: 270px;
+            }
             .moments-item{
                 .moments-image{
                     transform: scale(0);
                     transition: all 0.8s ease 0s;
-            
-                    img{
-                        display: inline-block;
+                }
+                .photo1{
+                    width: 800px;
+                    height: 800px;
+                    background: url('../img/instagram/one.png') no-repeat;
+                    @include _1664{
+                        width: 370px;
+                        height: 370px;
+                        border-radius: 50%;
+                        background: url('../img/instagram/one.png') -136px -220px no-repeat;
+                    }
+                    @include _1227{
+                        width: 250px;
+                        height: 250px;
+                    }
+                }
+                .photo2{
+                    width: 390px;
+                    height: 390px;
+                    background: url('../img/instagram/two.png') no-repeat;
+                    @include _1664{
+                        width: 370px;
+                        height: 370px;
+                        border-radius: 50%;
+                    }
+                    @include _1227{
+                        width: 250px;
+                        height: 250px;
+                    }
+                }
+                .photo3{
+                    width: 390px;
+                    height: 390px;
+                    background: url('../img/instagram/three.png') no-repeat;
+                    @include _1664{
+                        width: 370px;
+                        height: 370px;
+                        border-radius: 50%;
+                    }
+                    @include _1227{
+                        width: 250px;
+                        height: 250px;
                     }
                 }
             }
@@ -910,6 +1391,17 @@ body{
             display: flex; 
             flex-wrap: wrap; 
             gap: 20px;
+            @include _1664{
+                width: 100%;
+                height: 390px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            @include _1227{
+                height: 270px;
+                margin-left: -1px;
+            }
             .moments-item{
                 .moments-image{
                     transform: scale(0);
@@ -917,6 +1409,49 @@ body{
             
                     img{
                         display: inline-block;
+                    }
+                }
+                .photo4{
+                    width: 390px;
+                    height: 390px;
+                    background: url('../img/instagram/four.png') no-repeat;
+                    @include _1664{
+                        width: 370px;
+                        height: 370px;
+                        border-radius: 50%;
+                        background: url('../img/instagram/four.png') -13px -5px no-repeat;
+                    }
+                    @include _1227{
+                        width: 250px;
+                        height: 250px;
+                    }
+                }
+                .photo5{
+                    width: 390px;
+                    height: 390px;
+                    background: url('../img/instagram/five.png') no-repeat;
+                    @include _1664{
+                        width: 370px;
+                        height: 370px;
+                        border-radius: 50%;
+                    }
+                    @include _1227{
+                        width: 250px;
+                        height: 250px;
+                    }
+                }
+                .photo6{
+                    width: 800px;
+                    height: 800px;
+                    background: url('../img/instagram/six.png') no-repeat;
+                    @include _1664{
+                        width: 370px;
+                        height: 370px;
+                        border-radius: 50%;
+                    }
+                    @include _1227{
+                        width: 250px;
+                        height: 250px;
                     }
                 }
             }
@@ -994,22 +1529,25 @@ body{
 //footer
 
 .footer{
-    height: 380px;
     background: $footergreen;
-    padding-top: 64px;
-    padding-bottom: 64px;
-    padding-right: 150px;
-    padding-left: 150px;
-    display: flex;
-    justify-content: space-between;
-    .footer-block1{
+    .footer-container{
+        //height: 380px;
+        padding-top: 64px;
+        padding-bottom: 64px;
+        display: flex;
+        justify-content: space-between;
+        .footer-block1{
             width: 470px;
-            height: 232px;
+            //height: 232px;
             font-family: $ffMontserrat;
             font-size: $fs16;
             line-height: 20px;
             color: $darkgrey;
-            
+            @include _1227{
+                font-size: 12px;
+                width: 250px;
+                padding-right: 4px;
+            }
         .logo-footer{
             width: 99px;
             height: 50px;
@@ -1059,6 +1597,14 @@ body{
         flex-direction: column;
         justify-content: space-between;
         margin-top: 2px;
+        li{
+            @include _1441{
+                font-size: $fs14;
+            }
+            @include _1227{
+                font-size: 12px;
+            }
+        }
     }
     .footer-block3{
         width: 183px;
@@ -1066,10 +1612,23 @@ body{
         flex-direction: column;
         justify-content: space-between;
         margin-top: 2px;
+        li{
+            @include _1441{
+                font-size: $fs14;
+            }
+            @include _1227{
+                font-size: 12px;
+            }
+        }
     }
     .footer-block4{
         width: 476px;
-        
+        @include _1227{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
         .footer-new{
             width: 361px;
             height: 20px;
@@ -1081,12 +1640,19 @@ body{
             align-items: center;
             color: $darkgrey;
             margin-bottom: 31px;
+            @include _1227{
+                font-size: 12px;
+            }
         }
         .footer-form{
             width: 460px;
             height: 50px;
             position: relative;
             margin-bottom: 8px;
+            @include _1227{
+                font-size: 12px;
+                width: 300px;
+            }
             .footer-email{
                 width: 460px;
                 height: 50px;
@@ -1100,6 +1666,10 @@ body{
                 border: none;
                 padding-left: 32px;
                 outline: none;
+                @include _1227{
+                    font-size: 12px;
+                    width: 300px;
+                }
             }
             .footer-button{
                 width: 222px;
@@ -1108,6 +1678,10 @@ body{
                 position: absolute;
                 top: 0;
                 right: 0px;
+                @include _1227{
+                    font-size: 12px;
+                    width: 150px;
+                }
             }
         }
         .footer-conf{
@@ -1120,6 +1694,9 @@ body{
             align-items: center;
             color: #525252;
             margin-bottom: 40px;
+            @include _1227{
+                width: 300px;
+            }
         }
         .footer-text{
             width: 454px;
@@ -1130,8 +1707,12 @@ body{
             display: flex;
             align-items: center;
             color: #525252;
-
+            @include _1227{
+                font-size: 12px;
+                width: 300px;
+            }
         }
+    }
     }
 }
 

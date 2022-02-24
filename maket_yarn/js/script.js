@@ -5,11 +5,38 @@ $(document).ready(function(){
         slidesToShow: 5,
         speed: 500,
         waitForAnimate: false,
+        responsive: [
+            {
+                breakpoint: 1740,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 1535,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 1227,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 1227,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 });
 
 
 //Стрелки формы
+
 $(document).ready(function(){
     $('.block-title').click(function(event) {
         $(this).toggleClass('active').next().slideToggle(300);
@@ -56,6 +83,15 @@ if (animitems.length > 0) {
     }, 300);
 }
 
+
+//бургер
+
+$(document).ready(function() {
+    $('.header-burger').click(function(event) {
+        $('.header-burger, .menu-first-level').toggleClass('__active');
+        $('body').toggleClass('lock');
+    });
+});
 
 //Выпадающее меню
 
