@@ -1186,7 +1186,10 @@ body {
   @media all and (max-width: 1664px) {
     .instagram {
       height: 1100px; } }
-  @media all and (max-width: 1664px) {
+  @media all and (max-width: 1441px) {
+    .instagram {
+      height: 1100px; } }
+  @media all and (max-width: 1227px) {
     .instagram {
       height: 800px; } }
   .instagram .instagram-header {
